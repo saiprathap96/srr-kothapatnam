@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRR Kothapatnam | Authentic South Indian Restaurant</title>
+    <meta name="description"
+        content="SRR Kothapatnam offers rich, flavorful South Indian dishes including biryanis and kebabs in a cozy, green environment. Feel at home while tasting celebration.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">SRR Kothapatnam</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Book Table</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary">Order Now</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <!-- Using a high quality placeholder food video; replace src with your own -->
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-meat-cooking-on-a-grill-4171-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements-container">
+            <div class="floating-element leaf leaf-1"><i class="ph-fill ph-leaf"></i></div>
+            <div class="floating-element leaf leaf-2"><i class="ph-fill ph-leaf"></i></div>
+            <div class="floating-element spice spice-1"><i class="ph-fill ph-pepper"></i></div>
+            <div class="floating-element spice spice-2"><i class="ph-fill ph-plant"></i></div>
+        </div>
+
+        <div class="container hero-content parallax-content">
+            <h1 class="hero-headline">Authentic South Indian Flavors, Served with Heart</h1>
+            <p class="hero-subtext">Experience rich biryanis, soulful curries, and a peaceful dining space that feels
+                just like home.</p>
+            <div class="hero-buttons">
+                <a href="#order" class="btn btn-primary btn-large">Order Now</a>
+                <a href="#contact" class="btn btn-secondary btn-large">Reserve a Table</a>
+                <a href="#menu" class="btn btn-outline btn-large" style="border-color: white; color: white;">View
+                    Menu</a>
+            </div>
+            <div class="trust-indicators">
+                <div class="stars">
+                    <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                        class="ph-fill ph-star"></i><i class="ph-fill ph-star-half"></i>
+                </div>
+                <span>4.5 Rating | 4600+ Happy Customers</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container about-container reveal">
+            <div class="about-text">
+                <div class="section-badge">Our Story</div>
+                <h2 class="section-title">A Place Where Taste Meets Comfort</h2>
+                <p class="section-desc">SRR Kothapatnam brings together authentic South Indian flavors and a calm,
+                    welcoming ambiance. Surrounded by greenery and designed for comfort, every visit feels like a
+                    home-cooked celebration with restaurant-quality excellence.</p>
+                <div class="about-features">
+                    <div class="feature"><i class="ph-fill ph-plant"></i> Green Environment</div>
+                    <div class="feature"><i class="ph-fill ph-cooking-pot"></i> Traditional Recipes</div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/restaurant_interior_green.jpg" alt="Restaurant Interior">
+                <div class="image-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu section-padding bg-cream" id="menu">
+        <div class="container reveal">
+            <div class="section-header text-center">
+                <div class="section-badge">Our Specialties</div>
+                <h2 class="section-title">Signature Dishes</h2>
+            </div>
+
+            <!-- Advanced Filters & Cart Toggle -->
+            <div class="menu-controls">
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" id="menu-search" placeholder="Search biryani, starters...">
+                </div>
+                
+                <div class="filter-toggles">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="veg-toggle">
+                        <span class="slider round"></span>
+                        <span class="toggle-label">Veg Only <i class="ph-fill ph-leaf" style="color:var(--green)"></i></span>
+                    </label>
+                </div>
+
+                <div class="cart-toggle-btn" id="open-cart-btn">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+
+            <div class="menu-filters text-center">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="biryani">Biryani</button>
+                <button class="filter-btn" data-filter="starters">Starters</button>
+                <button class="filter-btn" data-filter="soups">Soups</button>
+            </div>
+
+            <div class="menu-grid" id="dynamic-menu-grid">
+                <!-- Dynamically populated by JS -->
+            </div>
+
+            <div class="text-center mt-40">
+                <a href="#menu" class="btn btn-outline" id="load-more-menu">Explore Full Menu <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-btn" id="close-cart-btn"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Dynamically populated -->
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button class="btn btn-primary w-100 btn-large">Checkout <i class="ph ph-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <section class="why-us section-padding" id="why-us">
+        <div class="container reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why Dine With Us?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="icon-wrapper"><i class="ph ph-tree"></i></div>
+                    <h3>Fresh & Peaceful</h3>
+                    <p>A relaxing garden vibe to enjoy your meal.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-wrapper"><i class="ph ph-bowl-food"></i></div>
+                    <h3>Authentic Flavors</h3>
+                    <p>Recipes crafted meticulously with traditional spices.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-wrapper"><i class="ph ph-heart"></i></div>
+                    <h3>Homely Service</h3>
+                    <p>Polite and welcoming staff ready to serve you.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-wrapper"><i class="ph ph-car"></i></div>
+                    <h3>Easy Drive-through</h3>
+                    <p>Convenient drive-through and no-contact delivery options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="reservation section-padding" id="reservation">
+        <div class="container reveal">
+            <div class="reservation-wrapper">
+                <div class="reservation-text">
+                    <div class="section-badge">Book a Table</div>
+                    <h2 class="section-title">Reserve Your Spot</h2>
+                    <p class="section-desc">Ensure you have the perfect table waiting for you. Book ahead for family
+                        dinners, celebrations, or romantic evenings.</p>
+                </div>
+                <div class="reservation-form-container">
+                    <form id="booking-form" class="reservation-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Full Name</label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="phone" required placeholder=" ">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="guests" min="1" max="20" required placeholder=" ">
+                                <label for="guests">Guests</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" id="date" required placeholder=" ">
+                            </div>
+                            <div class="form-group">
+                                <input type="time" id="time" required placeholder=" ">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large w-100">Confirm Reservation</button>
+                    </form>
+                    <div id="form-success" class="form-success hidden">
+                        <i class="ph-fill ph-check-circle" style="font-size: 3rem; color: var(--green);"></i>
+                        <h3>Table Reserved!</h3>
+                        <p>We look forward to serving you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Experience -->
+    <section class="gallery section-padding bg-cream" id="gallery">
+        <div class="container reveal">
+            <div class="section-header text-center">
+                <div class="section-badge">Gallery</div>
+                <h2 class="section-title">The SRR Experience</h2>
+            </div>
+            
+            <div class="horizontal-scroll-container" style="margin-top: 30px;">
+                <div class="scroll-item">
+                    <img src="images/restaurant_interior_green.jpg" alt="Ambiance">
+                </div>
+                <div class="scroll-item">
+                    <img src="images/Authentic_chicken_biryani_dish.jpg" alt="Food">
+                </div>
+                <div class="scroll-item">
+                    <img src="images/hero_ambiance_food.jpg" alt="Restaurant">
+                </div>
+                <div class="scroll-item">
+                    <!-- High quality placeholder to show scrolling works -->
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="More Ambiance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="cta-heading">Craving Something Delicious?</h2>
+            <div class="cta-buttons">
+                <a href="#order" class="btn btn-primary btn-large">Order Online</a>
+                <a href="#contact" class="btn btn-secondary-outline btn-large">Visit Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews section-padding bg-cream" id="reviews">
+        <div class="container reveal">
+            <div class="section-header text-center">
+                <h2 class="section-title">Loved by our Guests</h2>
+            </div>
+            <div class="carousel-container">
+                <div class="reviews-wrapper carousel-track">
+                    <div class="review-card carousel-slide">
+                        <div class="reviewer-info">
+                            <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star"></i></div>
+                        </div>
+                        <p class="review-text">"Food was delicious and worth the hype. Loved the cozy, peaceful
+                            atmosphere."</p>
+                        <div class="reviewer-name">- Local Resident, Hyderabad</div>
+                    </div>
+                    <div class="review-card carousel-slide">
+                        <div class="reviewer-info">
+                            <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star-half"></i></div>
+                        </div>
+                        <p class="review-text">"Perfect place for family dining with great homely service. Their Chicken
+                            Biryani is a must-try!"</p>
+                        <div class="reviewer-name">- Food Lover</div>
+                    </div>
+                    <div class="review-card carousel-slide">
+                        <div class="reviewer-info">
+                            <div class="stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                    class="ph-fill ph-star"></i></div>
+                        </div>
+                        <p class="review-text">"The Nalli Ghost Biryani was phenomenal. Will definitely be coming back
+                            again."</p>
+                        <div class="reviewer-name">- Traveling Foodie</div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev-btn"><i class="ph ph-caret-left"></i></button>
+                    <div class="carousel-dots"></div>
+                    <button class="carousel-btn next-btn"><i class="ph ph-caret-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2 class="footer-logo">SRR Kothapatnam</h2>
+                <p>Authentic South Indian flavors. <br>Homely Experience.</p>
+                <div style="margin-top: 20px;">
+                    <i class="ph ph-instagram-logo" style="font-size: 2rem; color: var(--gold); cursor: pointer;"></i>
+                    <i class="ph ph-facebook-logo"
+                        style="font-size: 2rem; color: var(--gold); cursor: pointer; margin-left: 10px;"></i>
+                    <a href="https://wa.me/919100589100" target="_blank" style="text-decoration: none; color: inherit; display: inline-block;">
+                        <i class="ph ph-whatsapp-logo" style="font-size: 2rem; color: var(--gold); cursor: pointer; margin-left: 10px;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3
+                    style="font-size: 1.5rem; margin-bottom: 20px; color: var(--gold); font-family: var(--font-heading);">
+                    Contact & Location</h3>
+                <ul class="contact-info">
+                    <li><i class="ph ph-map-pin"></i> Plot No.68, Laxmi Nagar, Rampally Main Road, Nagaram, Hyderabad,
+                        Telangana 501302</li>
+                    <li><i class="ph ph-phone"></i> +91 91005 89100</li>
+                    <li><i class="ph ph-clock"></i> Open daily, 11:00 AM - 11:30 PM</li>
+                </ul>
+                <div class="mt-20">
+                    <a href="tel:+919100589100" class="btn btn-outline" style="color: white; border-color: white;">Call
+                        Us</a>
+                    <a href="#contact" class="btn btn-primary" style="margin-left: 10px;">Get Directions</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container text-center">
+            <p>&copy; 2026 SRR Kothapatnam. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta d-md-none">
+        <a href="tel:+919100589100" class="btn btn-outline" style="color:white; border-color:white; flex:1; text-align:center; display:flex; gap:8px; justify-content:center; align-items:center;">
+            <i class="ph-fill ph-phone-call"></i> Call Now
+        </a>
+        <a href="#menu" class="btn btn-primary" onclick="openCart()" style="flex:1; text-align:center; display:flex; gap:8px; justify-content:center; align-items:center;">
+            <i class="ph-fill ph-shopping-bag"></i> Order Now
+        </a>
+    </div>
+
+    <!-- Spin & Win Popup -->
+    <div class="gamification-popup" id="promo-popup">
+        <div class="promo-content">
+            <button class="close-btn" onclick="document.getElementById('promo-popup').classList.remove('show')"><i class="ph ph-x"></i></button>
+            <i class="ph-fill ph-ticket" style="font-size: 4rem; color: var(--gold); margin-bottom:15px; display: inline-block;"></i>
+            <h3 style="font-family: var(--font-heading); color: var(--green); font-size:1.8rem;">Spin & Win!</h3>
+            <p style="color: var(--gray); margin-top: 10px;">Get up to 20% off on your first online order. Feeling lucky?</p>
+            <button class="btn btn-primary mt-20" style="width: 100%;" onclick="alert('Congratulations! You won 15% OFF! Use code: SRR15 at checkout.'); document.getElementById('promo-popup').classList.remove('show');">Spin the Wheel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
